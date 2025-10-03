@@ -17,10 +17,10 @@ categories = {
     "Noble Gas": "#DDA0DD",
     "Lanthanide": "#FFA07A",
     "Actinide": "#FF8C00",
-    "Unknown": "#D3D3D3"
+    "Other": "#D3D3D3"
 }
 
-# Define simple groups by atomic number (for classroom use)
+# Let's define simple groups by atomic number 
 noble_gases = {2, 10, 18, 36, 54, 86, 118}
 alkali_metals = {3, 11, 19, 37, 55, 87}
 alkaline_earth_metals = {4, 12, 20, 38, 56, 88}
