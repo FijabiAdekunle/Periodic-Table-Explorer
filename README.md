@@ -38,7 +38,7 @@ Students can explore and compare elements independently, making learning more en
 Engr. Fijabi J. Adekunle
 >Marine Engineer turned Data Scientist
 
-📧 f ijaytwo@gmail.com
+📧 fijaytwo@gmail.com
 
 - Explore the app [here](https://periodic-table-explorer-nv5b2xsxjaeatk2nfefwyy.streamlit.app/)
 
