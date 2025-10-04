@@ -5,7 +5,7 @@ st.set_page_config(page_title="Periodic Table Explorer", layout="wide")
 
 st.title("🔬 Interactive Periodic Table")
 
-# Define simple categories with colors
+# Define categories with colors
 categories = {
     "Alkali Metal": "#FF6666",
     "Alkaline Earth Metal": "#FFDEAD",
@@ -20,7 +20,7 @@ categories = {
     "Other": "#D3D3D3"
 }
 
-# Let's define simple groups by atomic number 
+# Define groups by atomic number
 noble_gases = {2, 10, 18, 36, 54, 86, 118}
 alkali_metals = {3, 11, 19, 37, 55, 87}
 alkaline_earth_metals = {4, 12, 20, 38, 56, 88}
@@ -40,8 +40,7 @@ def categorize(el):
     else:
         return "Other"
 
-
-# Define periodic table layout
+# Periodic table layout
 rows = [
     [1, None, None, None, None, None, None, None, None, None, None, None, None, 2],
     [3, 4, None, None, None, None, None, None, None, None, None, None, 5, 6],
@@ -54,7 +53,7 @@ rows = [
     [None, None, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, None]
 ]
 
-# Show grid
+# Display grid
 for row in rows:
     cols = st.columns(len(row))
     for i, atomic_no in enumerate(row):
@@ -63,15 +62,27 @@ for row in rows:
         else:
             el = periodictable.elements[atomic_no]
             cat = categorize(el)
-            color = categories[cat]
-            if cols[i].button(f"{el.symbol}\n{el.number}", key=f"{el.number}", help=cat):
-                st.session_state["selected"] = el
-            cols[i].markdown(
-                f"<div style='text-align:center; background-color:{color}; padding:5px; border-radius:6px;'>{el.symbol}<br>{el.number}</div>",
-                unsafe_allow_html=True
-            )
+            color = categories.get(cat, "#D3D3D3")
+            with cols[i]:
+                st.markdown(
+                    f"""
+                    <div style='background-color:{color};
+                                border-radius:8px;
+                                text-align:center;
+                                padding:6px;
+                                margin:2px;
+                                color:black;
+                                font-size:14px;'>
+                        <b>{el.symbol}</b><br>
+                        <span style='font-size:12px'>{el.name}</span><br>
+                        <span style='font-size:11px; color:gray'>({cat})</span><br>
+                        <span style='font-size:10px; color:dimgray'>{el.number}</span>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
 
-# Display details if selected
+# Selected element info (optional future expansion)
 if "selected" in st.session_state:
     el = st.session_state["selected"]
     st.subheader("Element Information")
@@ -93,4 +104,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
