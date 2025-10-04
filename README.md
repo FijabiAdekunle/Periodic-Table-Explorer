@@ -36,9 +36,9 @@ Students can explore and compare elements independently, making learning more en
 ## 👨‍💻 Author
 
 Engr. Fijabi J. Adekunle
-Marine Engineer turned Data Scientist
+>Marine Engineer turned Data Scientist
 
-📧 fijaytwo@gmail.com
+📧 f ijaytwo@gmail.com
 
 - Explore the app [here](https://periodic-table-explorer-nv5b2xsxjaeatk2nfefwyy.streamlit.app/)
 
